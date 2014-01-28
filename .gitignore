@@ -1,0 +1,10 @@
+
+*.pyc
+
+*.json
+
+*.store
+
+django_files/atlas/settings_local.py
+
+html/viz.html
