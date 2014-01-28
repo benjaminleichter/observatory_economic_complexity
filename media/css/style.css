@@ -145,7 +145,6 @@ header .logo {
 }
 header nav {
   float: right;
-  width: 418px;
   text-align: center;
 }
 header nav ul {
@@ -168,6 +167,7 @@ header nav ul li {
   display: inline;
   margin: 0;
 }
+
 header nav ul li a{
   color: grey;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
@@ -183,6 +183,9 @@ header nav ul li a:hover{
 header nav ul li a.current{
   color: black;
   text-decoration: underline;
+}
+#newBook{
+  color:#CD3333;
 }
 header .language_select{
   display: inline;
