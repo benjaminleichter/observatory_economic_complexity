@@ -490,7 +490,7 @@
 	 {% else %}
       <!-- The left pane -->
       <div id="app_pane" style="width:230px;">
-        <div data-toggle="tooltip" class="tab-content bootstro" data-bootstro-title="Query" data-bootstro-content="this is the query" data-bootstro-placement="right">
+        <div data-toggle="tooltip" class="tab-content bootstro" data-bootstro-title="Query" data-bootstro-content="The first thing you need to do is decide what question you are trying to answer. Perhaps, what products did the United States export in 2000? Or how has its import basket changed in the last ten years?  Once you have decided your query, you can enter the information you need to answer this in the left-hand bar." data-bootstro-placement="right">
 
           <!-- Country selection -->
           <div class="tab-pane active" id="tab-countries"> <!-- {% if not product_list %}active{% endif %} -->
@@ -617,13 +617,13 @@
 
 
           <div class="btn-group" id="viz_apps" data-toggle="buttons" style="margin-top:10px; margin-left:10px">
-            <label value="tree_map" class="btn btn-default {% if app_name == 'tree_map' %}active{% endif %} tooltipbs" data-placement="top" data-toggle="tooltip" title="Treemap" >
+            <label id="tMapBtn" value="tree_map" class="btn btn-default {% if app_name == 'tree_map' %}active{% endif %} tooltipbs" data-placement="top" data-toggle="tooltip" title="Treemap" >
               <input type="radio" style="background:url(media/img/home/teaser_tree_map.png) no-repeat;"> <img src="media/img/home/treeMap1.png" style="width:38px;"/>
             </label>
-            <label value="map" class="btn btn-default {% if app_name == 'map' %}active{% endif %}" data-placement="top" data-toggle="tooltip" title="Map" >
+            <label id="mapBtn"value="map" class="btn btn-default {% if app_name == 'map' %}active{% endif %}" data-placement="top" data-toggle="tooltip" title="Map" >
                <input type="radio" style="background:url(media/img/home/geo1.png) no-repeat;"> <img src="media/img/home/geo1.png" style="width:38px;"/>
             </label>
-            <label value="stacked" class="btn btn-default {% if year_interval_list %}active{%endif%} tooltipbs" data-placement="top" data-toggle="tooltip" title="Stacked Graph" >
+            <label id="stackedBtn" value="stacked" class="btn btn-default {% if year_interval_list %}active{%endif%} tooltipbs" data-placement="top" data-toggle="tooltip" title="Stacked Graph" >
               <input type="radio" name="viz_apps"> <img src="media/img/home/stacked1.png" style="width:38px;"/>
             </label>
           </div>
@@ -805,7 +805,7 @@
   <!-- END -->
   </div>
 
-      <div class="bootstro" data-bootstro-title="Help Box" data-bootstro-content="If your curious about anything on the page, put your mouse over it and the Help Box will display useful information." data-toggle="tooltip" data-bootstro-placement="right" id="helpBox">
+      <div class="bootstro" data-bootstro-title="Help Box" data-bootstro-content="If you're curious about anything on the page, simply move your mouse over it and the Help Box will display useful information. If you need more information, use the “About” tab at the top of the page" data-toggle="tooltip" data-bootstro-placement="right" id="helpBox">
         <div id="helpBoxInner">
             <h3>Help Box</h3>
             <hr>
@@ -1068,7 +1068,7 @@
         </div>
         
         <!-- Container for the visualization -->
-        <div class="bootstro" data-bootstro-title="Visualizer" data-bootstro-content="The visualizer displays the information selected in the query." data-toggle="tooltip" data-bootstro-placement="left"id="viz" style="width: 750px; min-height:520px;">
+        <div class="bootstro" data-bootstro-title="Visualization" data-bootstro-content="The visualization will appear here based off the query you implemented and application you chose." data-toggle="tooltip" data-bootstro-placement="left"id="viz" style="width: 750px; min-height:520px;">
 		</div>
         
         <!-- Container for the key/legend -->
@@ -1276,7 +1276,7 @@
             <option value="hs4" {% if prod_class == "hs4" %} selected="selected" {% endif %}>HS4</option>
           </select>
           -->
-          <div class="btn-group" id="viz_apps" data-toggle="buttons" style="margin-top:0px; margin-left:10px">
+          <div class="btn-group prodClass" id="viz_apps" data-toggle="buttons" style="margin-top:0px; margin-left:10px">
             <label class="btn btn-default {% if prod_class == "sitc4" %}active{% endif %}">
               <input type="radio" name="product_class" value="sitc4"> SITC4
             </label>
@@ -1373,7 +1373,7 @@
         <div class="product_class clone_loader" style="float:left;">
           
             <span class="definition" style="font-weight:bold; margin-left:20px;">Level of detail:</span>
-            <div class="btn-group" data-toggle="buttons" style="margin-top:0px; margin-left:20px">
+            <div id="detLev"class="btn-group" data-toggle="buttons" style="margin-top:0px; margin-left:20px">
               <label class="btn btn-default {% if app_name == "stacked" %} active {% endif %}">
                 <input type="radio" value="nesting_0" onchange="nest_drop_report(this.value);"> Low
               </label>
@@ -1723,7 +1723,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
         $("#help").click(function(){
-            bootstro.start(".bootstro");
+            bootstro.start(".bootstro",{finishButtonText:"Done"});
           });
         });
   </script>
