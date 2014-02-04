@@ -145,7 +145,6 @@ header .logo {
 }
 header nav {
   float: right;
-  width: 418px;
   text-align: center;
 }
 header nav ul {
@@ -1785,7 +1784,9 @@ display: block;
   text-decoration: none;
   font-weight: bold; 
 }
-
+#book{
+  color:rgb(176,23,31);
+}
 
 
 
