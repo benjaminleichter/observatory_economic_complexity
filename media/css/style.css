@@ -438,7 +438,7 @@ text-decoration: none;
   border-radius: 0 10px 10px 0;
   font-size:90%;
   float: left;
-  z-index: 0;
+  z-index: 11;
   width:165px;
 }
 .app #main #tool_pane > *{
